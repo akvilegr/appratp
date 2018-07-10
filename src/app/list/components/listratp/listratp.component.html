@@ -1,0 +1,28 @@
+<div>
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="tco_libelle">
+      <mat-header-cell *matHeaderCellDef> Libellé </mat-header-cell>
+      <mat-cell *matCellDef="let commerce"> {{commerce.fields.tco_libelle}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="code_postal">
+      <mat-header-cell *matHeaderCellDef> Code postal </mat-header-cell>
+      <mat-cell *matCellDef="let commerce"> {{commerce.fields.code_postal}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ville">
+      <mat-header-cell *matHeaderCellDef> ville </mat-header-cell>
+      <mat-cell *matCellDef="let commerce"> {{commerce.fields.ville}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [length]="1020"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
+
+</div>
+
+
+
+
